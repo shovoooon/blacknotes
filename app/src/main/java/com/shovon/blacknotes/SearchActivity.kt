@@ -27,7 +27,7 @@ class SearchActivity : AppCompatActivity() {
 
         val sm = getSystemService(Context.SEARCH_SERVICE) as SearchManager
         searchView.setSearchableInfo(sm.getSearchableInfo(componentName))
-        searchView.setOnQueryTextListener(object : android.widget.SearchView.OnQueryTextListener{
+        searchView.setOnQueryTextListener(object : android.widget.SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 loadQuery("%$query%")
                 return false
@@ -68,7 +68,7 @@ class SearchActivity : AppCompatActivity() {
 
             } while (cursor.moveToNext())
         }
-        if (searchList.size >= 1){
+        if (searchList.size >= 1) {
             rv_search.adapter =
                 SearchAdapter(this, searchList)
 

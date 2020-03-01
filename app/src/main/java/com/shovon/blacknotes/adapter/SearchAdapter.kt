@@ -11,7 +11,8 @@ import com.shovon.blacknotes.R
 import com.shovon.blacknotes.model.SearchNotes
 import kotlinx.android.synthetic.main.notes_item.view.*
 
-class SearchAdapter(val context: Context, private val listofStatus: ArrayList<SearchNotes>) : RecyclerView.Adapter<SearchAdapter.MyViewHolder>() {
+class SearchAdapter(val context: Context, private val listofStatus: ArrayList<SearchNotes>) :
+    RecyclerView.Adapter<SearchAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.notes_item, parent, false)
@@ -28,17 +29,18 @@ class SearchAdapter(val context: Context, private val listofStatus: ArrayList<Se
         holder.setData(status, position)
     }
 
-    inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+    inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         var currentStatus: SearchNotes? = null
         var currentPosition: Int = 0
 
         init {
             itemView.setOnClickListener {
-                context.startActivity(Intent(context, AddNoteActivity::class.java)
-                    .putExtra("id", currentStatus!!.noteId)
-                    .putExtra("title", itemView.tv_note_title.text.toString())
-                    .putExtra("description", itemView.tv_note_description.text.toString())
+                context.startActivity(
+                    Intent(context, AddNoteActivity::class.java)
+                        .putExtra("id", currentStatus!!.noteId)
+                        .putExtra("title", itemView.tv_note_title.text.toString())
+                        .putExtra("description", itemView.tv_note_description.text.toString())
                 )
             }
         }
