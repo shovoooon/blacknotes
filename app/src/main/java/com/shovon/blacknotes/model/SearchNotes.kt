@@ -1,4 +1,4 @@
-package com.shovon.blacknotes
+package com.shovon.blacknotes.model
 
 data class SearchNotes (
     val noteId:Int,

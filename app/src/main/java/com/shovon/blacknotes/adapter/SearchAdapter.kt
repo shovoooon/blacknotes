@@ -1,14 +1,15 @@
-package com.shovon.blacknotes
+package com.shovon.blacknotes.adapter
 
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.shovon.blacknotes.AddNoteActivity
+import com.shovon.blacknotes.R
+import com.shovon.blacknotes.model.SearchNotes
 import kotlinx.android.synthetic.main.notes_item.view.*
-import java.text.SimpleDateFormat
 
 class SearchAdapter(val context: Context, private val listofStatus: ArrayList<SearchNotes>) : RecyclerView.Adapter<SearchAdapter.MyViewHolder>() {
 

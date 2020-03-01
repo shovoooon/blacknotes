@@ -4,10 +4,9 @@ import android.app.SearchManager
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
-import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.android.synthetic.main.activity_main.*
+import com.shovon.blacknotes.adapter.SearchAdapter
+import com.shovon.blacknotes.model.SearchNotes
 import kotlinx.android.synthetic.main.activity_search.*
 import kotlinx.android.synthetic.main.activity_search.toolbar
 
@@ -58,12 +57,20 @@ class SearchActivity : AppCompatActivity() {
                 val description = cursor.getString(cursor.getColumnIndex("description"))
                 val date = cursor.getString(cursor.getColumnIndex("date"))
 
-                searchList.add(SearchNotes(id, noteTitle, description, date))
+                searchList.add(
+                    SearchNotes(
+                        id,
+                        noteTitle,
+                        description,
+                        date
+                    )
+                )
 
             } while (cursor.moveToNext())
         }
         if (searchList.size >= 1){
-            rv_search.adapter = SearchAdapter(this, searchList)
+            rv_search.adapter =
+                SearchAdapter(this, searchList)
 
         }
     }
