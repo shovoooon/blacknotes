@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Black Notes</string>
+    <string name="title">Notes</string>
+    <string name="add_notes">Add Notes</string>
+</resources>
